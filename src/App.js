@@ -1,11 +1,15 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
-import {Home, About, Events, Contact} from './pages';
+import Home from './pages/HomePage';
+import About from './pages/AboutPage';
+import Events from './pages/EventsPage';
+import Contact from './pages/ContactPage';
+//import {Home, About, Events, Contact} from './pages';
 
 
 function App() {
   return (
-    <div className="app-container App">
+    <div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
