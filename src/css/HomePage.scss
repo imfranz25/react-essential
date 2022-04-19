@@ -2,6 +2,7 @@
   display:flex;
   justify-content: center;
   .home-brand {
+    cursor: pointer;
     border:1px solid cyan;
     background-color: rgba(87, 236, 247, .6);
     padding:50px 150px 50px 150px;
@@ -15,5 +16,9 @@
     h1{
       text-shadow: 2px 1px white;
     }
+  }
+  .home-brand:hover {
+    transition: 2s;
+    border-radius: 5px 50px 5px 50px;
   }
 }

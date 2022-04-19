@@ -1,10 +1,14 @@
 import {Link} from "react-router-dom";
+import logo from "../assets/images/syra.png"; // logo
 
 const NavBar = () => (
   <>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid text-white">
-        <Link className="nav-link active text-white" to="/">SyraTech</Link>
+        <Link className="nav-link active text-white" to="/">
+          <img alt='SyraTech' src={logo} width='50' height='30' />
+          SyraTech
+        </Link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

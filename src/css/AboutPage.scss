@@ -1,0 +1,16 @@
+.about-container{
+  margin: 100px;
+  padding: 50px;
+  border:1px solid cyan;
+  background-color: rgba(87, 236, 247, .8);
+  border-radius: 10px;
+  h1{
+    text-align: center;
+    text-shadow: 2px 1px white;
+    margin-bottom: 30px;
+  }
+  p{
+    text-align: justify;
+    font-size: 20px;
+  }
+}
