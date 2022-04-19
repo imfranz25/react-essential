@@ -1,26 +1,19 @@
-import { useEffect, useState } from "react";
 import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import {Home, About, Events, Contact} from './pages';
 
-function DisplayData(props) {
-  return <div>
-    <h1>{props.data.name}</h1>
-    <p>{props.data.location}</p>
-    <img alt={props.data.login} src={props.data.avatar_url} />
-  </div>
-}
 
-function App({username}) {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${username}`)
-    .then(response => response.json())
-    .then(setData)
-  }, [username])
-  if(data) {
-    return <DisplayData data={data} />
-  } else {
-    return <div>No user available</div>
-  }
+function App() {
+  return (
+    <div className="app-container App">
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/events' element={<Events />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+    </div>
+  )
 }
 
 export default App;
