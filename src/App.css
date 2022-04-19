@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,21 +35,9 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* CUSTOMIZE DESIGN */
 body {
   background: black;
-}
-.app-container{
-  color:white;
-}
-.app-container h1 {
-  padding: 50px;
-  border-radius: 60px 10px 60px 10px;
-  background-color: rgba(112, 245, 250, 0.6);
-  border: 2px solid cyan;
-  margin: 30px 50px 0px 50px;
-  text-shadow: 2px 1px #282c34;
-  box-shadow: 10px 10px wheat;
 }
