@@ -1,25 +1,28 @@
-import './css/Main.scss';
-import {Routes, Route} from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './pages/HomePage';
-import About from './pages/AboutPage';
-import Events from './pages/EventsPage';
-import Contact from './pages/ContactPage';
-//import {Home, About, Events, Contact} from './pages';
+import {BiArchive} from 'react-icons/bi';
+import Search from './components/Search';
+import AddAppointment from './components/AddAppointment';
+import appointmentList from './data.json';
+import AppointmentInfo from './components/AppointmentInfo';
+import './App.css';
 
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/events' element={<Events />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
+    <div className="App container mx-auto mt-3 font-thin">
+      <h1 className="text-4xl">
+        <BiArchive className="inline-block text-red-400 align-top" />Your Appointments
+        </h1>
+        <AddAppointment />
+        <Search />
+
+        <ul className="divide-y divide-gray-200">
+        {appointmentList
+          .map(appointment => (
+            <AppointmentInfo key={appointment.id} appointment={appointment} />
+          ))}
+        </ul>
     </div>
-  )
+  );
 }
 
 export default App;
