@@ -1,11 +1,7 @@
 import './css/Main.scss';
 import {Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Home from './pages/HomePage';
-import About from './pages/AboutPage';
-import Events from './pages/EventsPage';
-import Contact from './pages/ContactPage';
-//import {Home, About, Events, Contact} from './pages';
+import {Home, About, Events, Contact} from './pages';
 
 
 function App() {
