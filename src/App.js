@@ -1,12 +1,25 @@
 import {BiArchive} from 'react-icons/bi';
+import { useState, useCallback, useEffect} from "react";
 import Search from './components/Search';
 import AddAppointment from './components/AddAppointment';
-import appointmentList from './data.json';
 import AppointmentInfo from './components/AppointmentInfo';
 import './App.css';
 
-
 function App() {
+  let [appointmentList, setAppointmentList] = useState([]);
+
+  const fetchData = useCallback(() => {
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        setAppointmentList(data)
+      });
+  },[]);
+
+  useEffect(() => {
+    fetchData();
+  },[fetchData]);
+
   return (
     <div className="App container mx-auto mt-3 font-thin">
       <h1 className="text-4xl">
@@ -14,7 +27,6 @@ function App() {
         </h1>
         <AddAppointment />
         <Search />
-
         <ul className="divide-y divide-gray-200">
         {appointmentList
           .map(appointment => (
