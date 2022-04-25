@@ -1,4 +1,4 @@
-//import './App.css';
+import './App.css';
 import {useSelector, useDispatch} from 'react-redux';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     dispatch({type: 'DEC'});
   }
   return (
-    <div>
+    <div className="App">
       <h1>Counter App</h1>
       <h2>{counter}</h2>
       <button onClick={increment}>Increment</button>
