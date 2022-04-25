@@ -8,6 +8,8 @@ import './css/ContactPage.scss';
 // ASSETS
 import logo from "./assets/images/syra.png"; // logo
 
+import {Link} from "react-router-dom";
+
 // HOME PAGE
 const Home = () => (
   <div className="home-container">
@@ -126,9 +128,27 @@ const Contact = () => (
   </div>
 )
 
+const Page404 = () => (
+  <div className="home-container">
+    <div className='home-brand'>
+      <div className='img-container'>
+        <img alt='SyraTech' src={logo}/>
+      </div>
+      <h1 className="text-center" style={{'font-size': '66px'}}>404</h1>
+      <h6 className="text-center">Page not found</h6>
+      <h6 className="text-center">
+        <Link to="/">
+          <button>Go to Home Page</button>
+        </Link>
+      </h6>
+    </div>
+  </div>
+)
+
 export {
   Home,
   About,
   Events,
   Contact,
+  Page404,
 }
