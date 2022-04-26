@@ -1,27 +1,20 @@
 import './App.css';
-import {useSelector, useDispatch} from 'react-redux';
-import {actions} from './store/index';
+import { SplitScreen } from './SplitScreen';
+
+const LeftHandComponent = () => (
+  <h1>Left</h1>
+)
+
+const RightHandComponent = () => (
+  <h1>Right</h1>
+)
 
 function App() {
-  const counter = useSelector(state=> state.counter);
-  const dispatch = useDispatch();
-  const increment = () => {
-    dispatch(actions.increment());
-  }
-  const decrement = () => {
-    dispatch(actions.decrement());
-  }
-  const addBy = () => {
-    dispatch(actions.addBy(10))
-  }
   return (
-    <div className="App">
-      <h1>Counter App</h1>
-      <h2>{counter}</h2>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={addBy}>Add By 10</button>
-    </div>
+    <SplitScreen
+      left={LeftHandComponent}
+      right={RightHandComponent}
+    />
   )
 }
 
